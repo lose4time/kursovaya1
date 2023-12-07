@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+	<title>ФП и ЛП JS</title>
+</head>
+<body>
+	<body>
+		<div class="container" style="display: flex; justify-content: space-between;">
+			<div class ="container-main" id="left">
+				<h2 class="zagolovok" >Функциональное программирование JS</h2>
+				<div class="container-body">
+					
+					<h3 class="container-body-h">Далеко-далеко за словесными горами, в стране гласных и согласных живут рыбные тексты. Страна они он если. Рот одна ты своего. Гор ты букв языком необходимыми, напоивший меня предложения свой коварных лучше ведущими предупредила, дал над его всемогущая до рукописи грустный буквоград вскоре семь! Запятых страну города безопасную строчка, сих переписали власти от всех?</h3>
+
+					<h4 class="container-body-h-plusminus">Плюсы подхода</h4>
+					<ul class="container-body-plus">
+						<li>Далеко-далеко за словесными горами в стране.</li>
+						<li>Жизни рот сих заманивший заглавных?</li>
+						<li>Собрал страна то деревни журчит?</li>
+						<li>Что ее проектах большого букв.</li>
+						<li>Ее ты образ имени это!</li>
+					</ul>
+					<h4 class="container-body-h-plusminus">Минусы подхода</h4>
+					<ul class="container-body-minus">
+						<li>Далеко-далеко за словесными горами в стране.</li>
+						<li>Жизни рот сих заманивший заглавных?</li>
+						<li>Собрал страна то деревни журчит?</li>
+						<li>Что ее проектах большого букв.</li>
+						<li>Ее ты образ имени это!</li>
+					</ul>
+
+					<select id="formSelectorLeft" onchange="changeFormLeft()">
+						<option value="formLeft1">Решить квадратное уравнение</option>
+						<option value="formLeft2">Генерация матрицы</option>
+						<option value="formLeft3">Пример 3</option>
+					</select>
+					
+					<div id="selectedFormLeft">
+						<div id="formLeft1" style="display:none;">
+							<input type="number" id="inputA" placeholder="Введите a">
+  <input type="number" id="inputB" placeholder="Введите b">
+  <input type="number" id="inputC" placeholder="Введите c">
+	<div id="outlef1"></div>
+  <button onclick="solveQuadraticEquation()">Решить</button>
+
+
+  <script>
+    function solveQuadraticEquation()  {
+      const a = document.getElementById('inputA').value;
+      const b = document.getElementById('inputB').value;
+      const c = document.getElementById('inputC').value;
+
+      const discriminant = Math.pow(b, 2) - 4 * a * c;
+
+      if (discriminant > 0) {
+        const x1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+        const x2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+        let msg = "Корни:   x1 ="+ x1+ " x2 ="+ x2;
+				document.getElementById("outlef1").innerHTML = msg;
+			}
+       else if (discriminant === 0) {
+        const x = -b / (2 * a);
+        let msg = "Корень 1:   x =" + x;
+				document.getElementById("outlef1").innerHTML = msg;
+			 }
+       else {
+        const realPart = (-b / (2 * a)).toFixed(2);
+        const imaginaryPart = (Math.sqrt(-discriminant) / (2 * a)).toFixed(2);
+        console.log();
+				let msg = "Два комплексных корня:   x1 =" + realPart + " + " + imaginaryPart + "i" + " x2 =" + realPart + " - " + imaginaryPart + "i";
+				document.getElementById("outlef1").innerHTML = msg;
+			}
+		}
+    
+
+
+  </script>
+						</div>
+					
+						<div id="formLeft2" style="display:none;">
+							
+						
+							<input type="number" id="rows" placeholder="Введите размерность">
+							
+							<button onclick="generateMatrix()">Сгенерировать матрицу </button>
+						
+
+							<div id="matrix"></div>
+
+<script>
+  function generateMatrix() {
+    var rows = document.getElementById("rows").value;
+    var matrix = "<table>";
+    for (var i = 0; i < rows; i++) {
+      matrix += "<tr>";
+      for (var j = 0; j < rows; j++) 
+        matrix += "<td>" + Math.floor(Math.random() * 10) + "</td>";
+      
+      matrix += "</tr>";
+			}
+    matrix += "</table>";
+    document.getElementById('matrix').innerHTML = matrix;
+			}
+
+</script>
+
+							 
+</div>
+					
+						<form id="formLeft3" style="display:none;">
+							<label for="inputLeft3">Input 3:</label>
+							<input type="text" id="inputLeft3">
+						</form>
+					</div>
+
+				</div>
+			</div>
+			
+			<div class ="container-main" id="right">
+				<h2 class="zagolovok">Логическое программирование JS</h2>
+				<div class="container-body">
+					
+					<h3 class="container-body-h">Далеко-далеко за словесными горами, в стране гласных и согласных живут рыбные тексты. Страна они он если. Рот одна ты своего. Гор ты букв языком необходимыми, напоивший меня предложения свой коварных лучше ведущими предупредила, дал над его всемогущая до рукописи грустный буквоград вскоре семь! Запятых страну города безопасную строчка, сих переписали власти от всех?</h3>
+
+					<h4 class="container-body-h-plusminus">Плюсы подхода</h4>
+					<ul class="container-body-plus">
+						<li>Далеко-далеко за словесными горами в стране.</li>
+						<li>Жизни рот сих заманивший заглавных?</li>
+						<li>Собрал страна то деревни журчит?</li>
+						<li>Что ее проектах большого букв.</li>
+						<li>Ее ты образ имени это!</li>
+					</ul>
+					<h4 class="container-body-h-plusminus">Минусы подхода</h4>
+					<ul class="container-body-minus">
+						<li>Далеко-далеко за словесными горами в стране.</li>
+						<li>Жизни рот сих заманивший заглавных?</li>
+						<li>Собрал страна то деревни журчит?</li>
+						<li>Что ее проектах большого букв.</li>
+						<li>Ее ты образ имени это!</li>
+					</ul>
+
+					
+		<select id="formSelectorRight" onchange="changeFormRight()">
+			<option value="formRight1">Пример 1</option>
+			<option value="formRight2">Родственные связи</option>
+			<option value="formRight3">Пример 3</option>
+		</select>
+		
+		<div id="selectedFormRight">
+			<form id="formRight1" style="display:none;">
+				
+
+
+			</form>
+		
+			<form id="formRight2" style="display:none;">
+				<script type="text/javascript">
+					// - База и стандартные предикаты -----------------------------
+					var mans = ["Иван", "Артём", "Саша", "Степан", "Кирилл"];
+					var woms = ["Наташа","Маша","Ира"];
+					var mothers = {
+									"Ира" : ["Маша","Наташа","Степан"],
+									"Наташа" : ["Артём","Иван"]
+									};
+					var fathers = {	
+									"Саша" : ["Иван","Артём"],
+									"Кирилл" : ["Ира"]
+								}
+				 
+					function man(value) {
+						if(mans.includes(value)) return true;
+						return false;
+					}
+					
+					function wom(value) {
+						if(woms.includes(value)) return true;
+						return false;
+					}
+					
+					function isSinglePoint(arr1, arr2) {
+						for(var i = 0; i<arr1.length; i++) {
+							for(var j = 0; j<arr2.length; j++)
+							{
+								if(arr1[i] == arr2[j])
+								{
+									return true;
+								}
+							}
+						}
+						return false;
+					}
+					
+					function isFather(ft, ch) {
+						if(fathers[ft]) {
+							var childs = fathers[ft];
+							return childs.inlcudes(ch);
+						}
+						return false;
+					}
+					
+					function isMother(mt, ch) {
+						if(mothers[mt]) {
+							var childs = mothers[mt];
+							return childs.inlcudes(ch);
+						}
+						return false;
+					}
+					
+					function getMotherOf(ch) {
+						for (var k in mothers){
+							if (mothers.hasOwnProperty(k)) {
+								var arr = mothers[k];
+								if(arr.includes(ch)) {
+									return k;
+								}
+							}
+						}
+						return "";
+					}
+					
+					function getFatherOf(ch) {
+						for (var k in fathers){
+							if (fathers.hasOwnProperty(k)) {
+								var arr = fathers[k];
+								if(arr.includes(ch)) {
+									return k;
+								}
+							}
+						}
+						return "";
+					}
+				 
+					// - Дополнительные предикаты-----------------------------------
+					
+					function isSister(v1,v2) {
+						return wom(v1) && wom(v2) && (getMotherOf(v1) == getMotherOf(v2));
+					}
+					
+					function isBrother(v1,v2) {
+						return man(v1) && man(v2) && (getMotherOf(v1) == getMotherOf(v2));
+					}
+					
+					function isMarried(v1, v2) {
+						return man(v1) && wom(v2) && isSinglePoint(fathers[v1],mothers[v2]);
+					}
+					
+					function isRodstv(v1, v2) {
+						if(isSister(v1,v2))
+							return true;
+						else 
+						{
+							if(isBrother(v1,v2))
+								return true;
+							else {
+								 var m1 = getMotherOf(v1);
+								 var m2 = getMotherOf(v2);
+								 
+								if(m1 != "" && m2!= "") {
+									return m1==m2;
+								}
+							}
+						}
+						
+						return false;
+					}
+					
+					function isDyadya(v1, v2) {
+						z = getMotherOf(v2);
+						if(isRodstv(v1,z))
+						{
+							return true;
+						}
+						
+						return false;
+					}
+					
+					function isDedushka(v1, v2) {
+						var z = fathers[v1];
+						var z2 = mothers[getMotherOf(v2)];
+						if(!z)return false;
+						if(!z2)return false;
+						
+						if(z.includes(getMotherOf(v2)))
+							return true;
+						
+						return false;
+					}
+					
+					// - Функции HTML страницы -------------------------------------
+					function printDB()
+					{
+						//Написать базу данных
+						var bd = "Ира мать Наташи, Маши, Степана<br>";
+						bd+="Наташа мать Артёма и Ивана<br>";
+						bd+="Саша отец Ивана и Артёма<br>";
+						bd+="Кирилл отец Иры<br>";
+						var msg = `<font color="green"> ${bd} </font>`;
+						document.getElementById("div_1").innerHTML = msg;
+					}
+					function run() {
+						
+						let v1 = document.getElementById("var1").value;
+						let v2 = document.getElementById("var2").value;
+						var result = isSister(v1,v2);
+						
+						var answer = (result === true) ? "Да" : "Нет";
+						var msg = `<font color="blue">Ответ: ${answer}</font>`;
+						document.getElementById("div_2").innerHTML = msg;
+					}
+					
+					function run2() {
+						let v1 = document.getElementById("var1").value;
+						let v2 = document.getElementById("var2").value;
+						var result = isBrother(v1,v2);
+						var answer = (result === true) ? "Да" : "Нет";
+						var msg = `<font color="blue">Ответ: ${answer}</font>`;
+						document.getElementById("div_2").innerHTML = msg;
+					}
+					
+					function run3() {
+						let v1 = document.getElementById("var1").value;
+						let v2 = document.getElementById("var2").value;
+						var result = isDedushka(v1,v2);
+						var answer = (result === true) ? "Да" : "Нет";
+						var msg = `<font color="blue">Ответ: ${answer}</font>`;
+						document.getElementById("div_2").innerHTML = msg;
+					}
+					
+					function run4() {
+						let v1 = document.getElementById("var1").value;
+						let v2 = document.getElementById("var2").value;
+						var result = isDyadya(v1,v2);
+						var answer = (result === true) ? "Да" : "Нет";
+						var msg = `<font color="blue">Ответ: ${answer}</font>`;
+						document.getElementById("div_2").innerHTML = msg;
+					}
+					
+					function run5() {
+					
+						let v1 = document.getElementById("var1").value;
+						let v2 = document.getElementById("var2").value;
+						var result = isMarried(v1,v2);
+						var answer = (result === true) ? "Да" : "Нет";
+						var msg = `<font color="blue">Ответ: ${answer}</font>`;
+						document.getElementById("div_2").innerHTML = msg;
+					}
+					
+					function run6() {
+						let v1 = document.getElementById("var1").value;
+						let v2 = document.getElementById("var2").value;
+						var result = isRodstv(v1,v2);
+						var answer = (result === true) ? "Да" : "Нет";
+						var msg = `<font color="blue">Ответ: ${answer}</font>`;
+						document.getElementById("div_2").innerHTML = msg;
+					}
+				
+				 </script>
+				 
+				 <form name ="myForm" onload="printDB()">
+
+					 
+					 <br>
+					 <b>Человек 1:</b>
+					 <input type="text" id="var1" size=6 maxlength=8>
+					 <br><br>
+					 <b>Человек 2: </b>
+					 <input type="text" id="var2" size=6 maxlength=8>
+					 <br><br>
+					 <input type = "button" name = "button1" value = "Сёстрами" onclick="run();"><br><br>
+					 <input type = "button" name = "button1" value = "Братьями" onclick="run2();"><br><br>
+					 <input type = "button" name = "button1" value = "Дедушкой и внуком(внучкой)" onclick="run3()"><br><br>
+					 <input type = "button" name = "button1" value = "Дядей и племянником" onclick="run4()"><br><br>
+					 <input type = "button" name = "button1" value = "Супругами" onclick="run5();"><br><br>
+					 <input type = "button" name = "button1" value = "Родственниками" onclick="run6()"><br><br>
+					 База данных:
+					 
+					 <br><br>
+					 <div id="div_1"><script>printDB();</script></div>
+					 <div id="div_2"></div>
+					 <br><br>
+				 </form>
+				 
+			</form>
+		
+			<form id="formRight3" style="display:none;">
+				<label for="input3">Input 3:</label>
+				<input type="text" id="input3">
+			</form>
+		</div>
+
+				</div>
+			</div>
+		</div>
+		
+		
+		<script>
+			function changeFormRight() {
+
+						var selectedValue = document.getElementById("formSelectorRight").value;
+		
+				document.getElementById("formRight1").style.display = "none";
+				document.getElementById("formRight2").style.display = "none";
+				document.getElementById("formRight3").style.display = "none";
+				
+		
+				if (selectedValue === "formRight1") 
+					document.getElementById("formRight1").style.display = "block";
+				 else if (selectedValue === "formRight2") 
+					document.getElementById("formRight2").style.display = "block";
+				 else if (selectedValue === "formRight3") 
+					document.getElementById("formRight3").style.display = "block";
+			}
+
+			function changeFormLeft() {
+
+var selectedValue = document.getElementById("formSelectorLeft").value;
+
+document.getElementById("formLeft1").style.display = "none";
+document.getElementById("formLeft2").style.display = "none";
+document.getElementById("formLeft3").style.display = "none";
+
+
+if (selectedValue === "formLeft1") 
+document.getElementById("formLeft1").style.display = "block";
+else if (selectedValue === "formLeft2") 
+document.getElementById("formLeft2").style.display = "block";
+else if (selectedValue === "formLeft3") 
+document.getElementById("formLeft3").style.display = "block";
+}
+			
+		</script>
+
+	</body>
+</body>
+</html>

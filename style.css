@@ -1,0 +1,11 @@
+.container-body {
+	border-style: solid;
+	border-width: 1px;  
+	padding: 1vh;
+	margin-left: 0.5vh;
+	margin-right: 0.5vh;
+}
+.zagolovok {
+	display: flex; 
+	justify-content: center;
+}

@@ -1,11 +1,36 @@
+* {
+	font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+}
+
 .container-body {
-	border-style: solid;
-	border-width: 1px;  
+	border: 3px solid teal;
 	padding: 1vh;
 	margin-left: 0.5vh;
 	margin-right: 0.5vh;
 }
+button {
+	background-color: transparent;
+	border: 2px solid teal;
+}
+button:hover {
+	background-color: teal;
+	color:white;
+}
+select {
+	background-color: transparent;
+	border: 2px solid teal;
+}
+select:hover {
+	background-color: teal;
+	color:white;
+}
+input {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	border: 2px solid teal;
+}
 .zagolovok {
 	display: flex; 
 	justify-content: center;
+	font-size: 40px;
 }
